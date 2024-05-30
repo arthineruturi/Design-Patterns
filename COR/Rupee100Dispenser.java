@@ -2,23 +2,24 @@ package COR;
 
 class Rupee100Dispenser implements DispenseChain {
 
-    private DispenseChain nextChain;
+    private DispenseChain nextNote;
 
     @Override
-    public void setNextChain(DispenseChain nextChain) {
-        this.nextChain = nextChain;
+    public void setNextChain(DispenseChain nextNote) {
+        this.nextNote = nextNote;
     }
 
     @Override
-    public void dispense(Currency currency) {
-        if (currency.getAmount() >= 100) {
-            int num = currency.getAmount() / 100;
-            int remainder = currency.getAmount() % 100;
+    public void dispense(int amount) {
+        if (amount >= 100) {
+            int num = amount / 100;
+            int remainder = amount % 100;
             System.out.println("Dispensing " + num + " 100₹ note");
-            if (remainder != 0) this.nextChain.dispense(new Currency(remainder));
+            if (remainder != 0) {
+                this.nextNote.dispense(remainder);
+            }
         } else {
-            this.nextChain.dispense(currency);
+            System.out.println("Cannot withdraw money"); 
         }
     }
 }
-

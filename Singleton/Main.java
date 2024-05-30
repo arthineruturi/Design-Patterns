@@ -1,42 +1,15 @@
-<<<<<<< HEAD
 package Singleton;
-import java.time.LocalDateTime;
 public class Main {
     public static void main(String[] args) {
-        DateTime dateTimeInstance1 = DateTime.getInstance();
-        DateTime dateTimeInstance2 = DateTime.getInstance();
+        LoginManager loginManager1 = LoginManager.getInstance();
+        LoginManager loginManager2 = LoginManager.getInstance();
+
+        System.out.println(loginManager1 == loginManager2);  
         
-        System.out.println(dateTimeInstance1 == dateTimeInstance2); // Output: true
-        displayCurrentDateTime(dateTimeInstance1);
-        displayCurrentDateTime(dateTimeInstance2);
-    }
-    
-  
-    public static void displayCurrentDateTime(DateTime dateTimeInstance) {
-        LocalDateTime currentDateTime = dateTimeInstance.getCurrentDateTime();
-        System.out.println("Current date and time: " + currentDateTime);
-=======
-public class Main {
-    public static void main(String[] args) {
-           Singleton singletonInstance = Singleton.getInstance();
-        String dateOfBirth = singletonInstance.getDateOfBirth();
-        System.out.println("Date of Birth: " + dateOfBirth);
+        loginManager1.login("user1"); 
+        loginManager2.login("user2");  
 
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-     
-        Singleton anotherInstance = Singleton.getInstance();
-        String dateOfBirth1 = anotherInstance.getDateOfBirth();
-        System.out.println("Date of Birth: " + dateOfBirth1);
-        if (singletonInstance == anotherInstance) {
-            System.out.println("Both references point to the same Singleton instance.");
-        } else {
-            System.out.println("References point to different Singleton instances.");
-        }
->>>>>>> origin/master
+        loginManager1.logout();  
+        loginManager2.login("user2");  
     }
 }

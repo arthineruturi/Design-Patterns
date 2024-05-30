@@ -1,7 +1,5 @@
 package COR;
-
 import java.util.Scanner;
-
 public class ATMRupeeDispenserChain {
 
     private DispenseChain c1;
@@ -17,10 +15,13 @@ public class ATMRupeeDispenserChain {
         c2.setNextChain(c3);
     }
 
+   
     public static void main(String[] args) {
         ATMRupeeDispenserChain atmDispenser = new ATMRupeeDispenserChain();
         Scanner input = new Scanner(System.in);
-        while (true) {
+        System.out.println("Enter 1 to Withdraw Cash");
+        int choice1 = input.nextInt();
+        while (choice1==1) {
             System.out.println("ATM Menu:");
             System.out.println("1. Dispense Cash");
             System.out.println("2. Quit");
@@ -34,15 +35,14 @@ public class ATMRupeeDispenserChain {
                     if (amount % 100 != 0) {
                         System.out.println("Amount should be in multiple of 100₹.");
                     } else {
-                        // process the request
-                        atmDispenser.c1.dispense(new Currency(amount));
+                       
+                        atmDispenser.c1.dispense(amount);
                     }
                     break;
 
                 case 2:
                     System.out.println("Exiting...");
-                    input.close();
-                    System.exit(0);
+                    choice1 = 0;                
                     break;
 
                 default:
@@ -51,4 +51,5 @@ public class ATMRupeeDispenserChain {
             }
         }
     }
+
 }

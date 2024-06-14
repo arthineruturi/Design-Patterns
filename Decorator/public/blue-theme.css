@@ -1,0 +1,30 @@
+body {
+  background-color: #f0faff;
+  color: #003366;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
+}
+
+h1 {
+  color: #ff9900;
+}
+
+select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  background-color: #e0f7fa;
+  color: #003366;
+}
+
+option {
+  background-color: #e0f7fa;
+  color: #003366;
+}
+
+#themeSwitcher {
+  margin-bottom: 20px;
+}

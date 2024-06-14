@@ -1,0 +1,33 @@
+body {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+  }
+  
+  h1 {
+    color: #f7c6d2;
+  }
+  
+  select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    background-color: #444;
+    color: #fff;
+  }
+  
+  option {
+    background-color: #444;
+    color: #fff;
+  }
+  
+  #themeSwitcher {
+    margin-bottom: 20px;
+  }
+  
+  /* Additional styles for the dark theme */
+  

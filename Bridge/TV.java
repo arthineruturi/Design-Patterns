@@ -13,7 +13,9 @@ class TV implements Device {
     public void turnOff() {
         System.out.println("TV is turned off.");
     }
-    
+    public void mute() {
+    	setVolume(0);
+    }
     @Override
     public void setVolume(int volume) {
         this.volume = volume;

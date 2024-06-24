@@ -9,7 +9,7 @@ class ReceivedState implements OrderState {
 
     @Override
     public void sendNotification(Order order) {
-        // Send notification to customer or admin
+        
         System.out.println("Notification: Order received.");
     }
 }
